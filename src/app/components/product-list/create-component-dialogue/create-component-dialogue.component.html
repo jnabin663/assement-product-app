@@ -1,4 +1,9 @@
-<h1 mat-dialog-title>{{'createProduct' | translate}}</h1>
+<div class="modal-header">
+    <h1 mat-dialog-title>{{'createProduct' | translate}}</h1>
+    <button [mat-dialog-close]="true">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
 <div mat-dialog-content style="display: flex;flex-direction: column;gap: 0px;">
   <mat-form-field appearance="fill">
     <mat-label>{{'formProductName' | translate}}</mat-label>
