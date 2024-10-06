@@ -22,5 +22,7 @@
   "Brand is required": "Brand is required",
   "totalPriceLabel": "Total price: {{ totalPrice }}$",
   "confirmAction": "Confirm Action",
-  "savedDataWillBeLost": "Are you sure you want to close? You may lose unsaved changes."
+  "savedDataWillBeLost": "Are you sure you want to close? You may lose unsaved changes.",
+  "yesButton": "Yes",
+  "noButton": "No"
 }

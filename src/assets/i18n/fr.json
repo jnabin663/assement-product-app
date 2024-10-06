@@ -22,5 +22,7 @@
     "Brand is required": "La marque est obligatoire",
     "totalPriceLabel": "Prix ​​total: {{ totalPrice }}$",
     "confirmAction": "Confirmer l'action",
-    "savedDataWillBeLost": "Êtes-vous sûr de vouloir fermer ? Vous risquez de perdre les modifications non enregistrées."
+    "savedDataWillBeLost": "Êtes-vous sûr de vouloir fermer ? Vous risquez de perdre les modifications non enregistrées.",
+    "yesButton": "Oui",
+    "noButton": "Non"
   }
