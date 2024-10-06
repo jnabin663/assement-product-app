@@ -1,0 +1,23 @@
+{
+  "productNavigation": "Product",
+  "productTable": "Product table",
+  "tabeHeaderName": "Name",
+  "tabeHeaderCode": "Code",
+  "tabeHeaderBrand": "Brand",
+  "tabeHeaderPrice": "Price",
+  "formProductName": "Product Name",
+  "formProductCode": "Product Code",
+  "formProductDescription": "Product Description",
+  "formProductBrand": "Product Brand",
+  "formProductPrice": "Product Price",
+  "tabeHeaderDescription": "Description",
+  "filterAnyValue": "Filter any value",
+  "create": "Create",
+  "createProduct": "Create Product",
+  "close": "Close",
+  "save": "Save",
+  "Price is required": "Price is required",
+  "Name is required": "Name is required",
+  "Code is required": "Code is required",
+  "Brand is required": "Brand is required"
+}

@@ -1,0 +1,23 @@
+{
+    "productNavigation": "Produit",
+    "productTable": "Tableau des produits",
+    "tabeHeaderName": "Nom",
+    "tabeHeaderCode": "Code",
+    "tabeHeaderBrand": "Marque",
+    "tabeHeaderPrice": "Prix",
+    "tabeHeaderDescription": "Description",
+    "filterAnyValue": "Filtrer n'importe quelle valeur",
+    "create": "Créer",
+    "createProduct": "Créer un produit",
+    "formProductName": "Nom du produit",
+    "formProductCode": "Code produit",
+    "formProductDescription": "Description du produit",
+    "formProductBrand": "Marque du produit",
+    "formProductPrice": "Prix ​​du produit",
+    "close": "Fermer",
+    "save": "Sauvegarder",
+    "Price is required": "Le prix est obligatoire",
+    "Name is required": "Le nom est requis",
+    "Code is required": "Le code est requis",
+    "Brand is required": "La marque est obligatoire"
+  }

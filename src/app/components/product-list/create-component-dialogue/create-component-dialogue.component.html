@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>{{'createProduct' | translate}}</h1>
+<div mat-dialog-content style="display: flex;flex-direction: column;gap: 0px;">
+  <mat-form-field appearance="fill">
+    <mat-label>{{'formProductName' | translate}}</mat-label>
+    <input #nameRef matInput [(ngModel)]="data.name" required name="name">
+    <mat-error *ngIf="!data.name">{{'Name is required' | translate}}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{'formProductCode' | translate}}</mat-label>
+    <input #codeRef matInput [(ngModel)]="data.code" required>
+    <mat-error *ngIf="!data.code">{{'Code is required' | translate}}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{'formProductDescription' | translate}}</mat-label>
+    <textarea #descriptionRef matInput [(ngModel)]="data.description">
+        <textarea matInput [(ngModel)]="data.description" [placeholder]="'Description' | translate"></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{'formProductBrand' | translate}}</mat-label>
+    <input #brandRef matInput [(ngModel)]="data.brand" required>
+    <mat-error *ngIf="!data.brand">{{'Brand is required' | translate}}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{'formProductPrice' | translate}}</mat-label>
+    <input #priceRef type="number" matInput [(ngModel)]="data.price" required>
+    <mat-error *ngIf="!data.price">{{'Price is required' | translate}}</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions style="display: flex;justify-content: flex-end;gap: 10px;">
+  <button mat-button [mat-dialog-close]="true">{{'close' | translate}}</button>
+  <button mat-button (click)="onSaveClick([priceRef, brandRef, codeRef, nameRef])" cdkFocusInitial>{{'save' | translate}}</button>
+</div>

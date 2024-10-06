@@ -1,0 +1,19 @@
+.product-table-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.product-table-wrapper h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .product-table-wrapper{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+  }

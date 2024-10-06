@@ -1,0 +1,20 @@
+<div class="product-table-wrapper">
+    <h3>{{'productTable' | translate}}</h3>
+    <app-common-table  
+                    style="display: flex;flex-direction: column;height: 100%;overflow-y: hidden;"
+                    [columns]="columns"
+                    [buttons]="buttons"
+                    [data]="data"
+                    [canCreate]="true"
+                    [filter]="true"
+                    [createButtonName]="'createProduct' | translate"
+                    [filterPlaceholder]="'filterAnyValue' | translate"
+                    [footer]="footer" 
+                    [pagination]="[5, 25, 100]"
+                    [pageSize]="5"
+                    [tableMinWidth]="400"
+                    (filteredData)="applyFilter($event)"
+                    (createClick)="openCreateProductDialogue()"
+                    (buttonClick)="buttonClick($event)">
+    </app-common-table>
+</div>

@@ -1,0 +1,31 @@
+.product-header{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E8E7EE;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.product-header .logo img{
+    max-width: 100%;
+    width: 100px;
+    padding: 0px 20px;
+}
+
+.language-change select{
+    color: #252631;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .product-header{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+  }

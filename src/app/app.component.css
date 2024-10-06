@@ -1,0 +1,22 @@
+.product-page-container{
+    display: flex;
+    height: 100vh;
+    overflow-y: hidden;
+}
+.product-page-container .navigation{
+    flex-basis: 120px;
+    height: 100%;
+}
+.product-page-container .product-list{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .navigation {
+      display: none;
+    }
+  }
