@@ -1,16 +1,24 @@
-import {Component, Input, Output, EventEmitter, OnInit, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  ViewChild,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { TableBtn, TableColumn } from '../interfaces';
 
 @Component({
   selector: 'app-common-table',
   templateUrl: './common-table.component.html',
-  styleUrls: ['./common-table.component.css']
+  styleUrls: ['./common-table.component.css'],
 })
-export class CommonTableComponent{
-
+export class CommonTableComponent {
   @Input() canCreate: boolean = true;
   @Input() createButtonName: string = 'Create';
   @Input() columns: TableColumn[] = [];
@@ -29,17 +37,18 @@ export class CommonTableComponent{
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
   displayedColumns?: string[];
 
-  @ViewChild(MatPaginator, {static: true}) paginator?: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort?: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator?: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort?: MatSort;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.data){
-      if(changes['data']){
-        this.dataSource =  new MatTableDataSource(this.data);
+    if (this.data) {
+      if (changes['data']) {
+        this.dataSource = new MatTableDataSource(this.data);
         this.dataSource.sort = this.sort!;
         this.dataSource.paginator = this.paginator!;
-        this.displayedColumns = [...this.columns.map(c => c.columnDef)];
-        if (this.buttons.length > 0 ) this.displayedColumns = [...this.displayedColumns, 'actions'];
+        this.displayedColumns = [...this.columns.map((c) => c.columnDef)];
+        if (this.buttons.length > 0)
+          this.displayedColumns = [...this.displayedColumns, 'actions'];
       }
     }
   }
@@ -52,8 +61,7 @@ export class CommonTableComponent{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
-    
+
     this.dataSource.sort = this.sort!;
   }
-
 }

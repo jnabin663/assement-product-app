@@ -131,7 +131,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  initActionButtons(){
+  initActionButtons() {
     this.buttons = [
       {
         styleClass: 'btn btn-success px-2',
