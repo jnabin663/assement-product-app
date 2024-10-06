@@ -68,7 +68,11 @@ export class ProductListComponent implements OnInit {
     filteredData.forEach((product: ProductData) => {
       this.totalPrice = this.totalPrice + product.price;
     });
-    this.footer = `Total price: ${this.totalPrice}$`;
+    this.footer = this.FooterText;
+  }
+
+  get FooterText(){
+    return this.translate.instant('totalPriceLabel', { totalPrice: this.totalPrice });
   }
 
   buttonClick(result: string[]) {

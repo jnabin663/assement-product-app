@@ -19,5 +19,6 @@
   "Price is required": "Price is required",
   "Name is required": "Name is required",
   "Code is required": "Code is required",
-  "Brand is required": "Brand is required"
+  "Brand is required": "Brand is required",
+  "totalPriceLabel": "Total price: {{ totalPrice }}$"
 }
