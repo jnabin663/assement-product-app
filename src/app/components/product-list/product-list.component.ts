@@ -6,7 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Location } from '@angular/common';
 import { CreateComponentDialogueComponent } from './create-component-dialogue/create-component-dialogue.component';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -24,8 +23,7 @@ export class ProductListComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     public dialog: MatDialog,
-    private location: Location,
-    private route: ActivatedRoute
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -34,20 +32,7 @@ export class ProductListComponent implements OnInit {
     );
     this.initColumns();
     this.parseRoute(this.location.path());
-    this.buttons = [
-      {
-        styleClass: 'btn btn-success px-2',
-        icon: 'delete',
-        payload: (element: ProductData) => `${element.id}`,
-        action: 'delete',
-      },
-      {
-        styleClass: 'btn btn-primary px-2',
-        icon: 'build',
-        payload: (element: ProductData) => `${element.id}`,
-        action: 'edit',
-      },
-    ];
+    this.initActionButtons();
 
     this.data.forEach((product: ProductData) => {
       this.totalPrice = this.totalPrice + product.price;
@@ -145,5 +130,22 @@ export class ProductListComponent implements OnInit {
       } else {
       }
     });
+  }
+
+  initActionButtons(){
+    this.buttons = [
+      {
+        styleClass: 'btn btn-success px-2',
+        icon: 'delete',
+        payload: (element: ProductData) => `${element.id}`,
+        action: 'delete',
+      },
+      {
+        styleClass: 'btn btn-primary px-2',
+        icon: 'build',
+        payload: (element: ProductData) => `${element.id}`,
+        action: 'edit',
+      },
+    ];
   }
 }
