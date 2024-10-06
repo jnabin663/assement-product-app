@@ -20,5 +20,7 @@
   "Name is required": "Name is required",
   "Code is required": "Code is required",
   "Brand is required": "Brand is required",
-  "totalPriceLabel": "Total price: {{ totalPrice }}$"
+  "totalPriceLabel": "Total price: {{ totalPrice }}$",
+  "confirmAction": "Confirm Action",
+  "savedDataWillBeLost": "Are you sure you want to close? You may lose unsaved changes."
 }

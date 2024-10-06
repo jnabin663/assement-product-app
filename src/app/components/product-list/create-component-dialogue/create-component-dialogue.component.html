@@ -1,6 +1,6 @@
 <div class="modal-header">
     <h1 mat-dialog-title>{{'createProduct' | translate}}</h1>
-    <button [mat-dialog-close]="true">
+    <button (click)="onCancelCLick()">
         <mat-icon>close</mat-icon>
     </button>
 </div>
@@ -32,6 +32,6 @@
   </mat-form-field>
 </div>
 <div mat-dialog-actions style="display: flex;justify-content: flex-end;gap: 10px;">
-  <button mat-button [mat-dialog-close]="true">{{'close' | translate}}</button>
+  <button mat-button (click)="onCancelCLick()">{{'close' | translate}}</button>
   <button mat-button (click)="onSaveClick([priceRef, brandRef, codeRef, nameRef])" cdkFocusInitial>{{'save' | translate}}</button>
 </div>
