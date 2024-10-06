@@ -24,5 +24,7 @@
   "confirmAction": "Confirm Action",
   "savedDataWillBeLost": "Are you sure you want to close? You may lose unsaved changes.",
   "yesButton": "Yes",
-  "noButton": "No"
+  "noButton": "No",
+  "delete": "Delete",
+  "edit": "Edit"
 }

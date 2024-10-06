@@ -141,12 +141,14 @@ export class ProductListComponent implements OnInit {
       {
         styleClass: 'btn btn-success px-2',
         icon: 'delete',
+        title: this.translate.instant('delete'),
         payload: (element: ProductData) => `${element.id}`,
         action: 'delete',
       },
       {
         styleClass: 'btn btn-primary px-2',
         icon: 'build',
+        title: this.translate.instant('edit'),
         payload: (element: ProductData) => `${element.id}`,
         action: 'edit',
       },

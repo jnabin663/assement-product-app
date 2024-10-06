@@ -24,5 +24,7 @@
     "confirmAction": "Confirmer l'action",
     "savedDataWillBeLost": "Êtes-vous sûr de vouloir fermer ? Vous risquez de perdre les modifications non enregistrées.",
     "yesButton": "Oui",
-    "noButton": "Non"
+    "noButton": "Non",
+    "delete": "Supprimer",
+    "edit": "Modifier"
   }
