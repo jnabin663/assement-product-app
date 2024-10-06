@@ -35,8 +35,18 @@ export class ProductListComponent implements OnInit {
     this.initColumns();
     this.parseRoute(this.location.path());
     this.buttons = [
-      { styleClass: 'btn btn-success px-2',     icon: 'delete',    payload: (element: ProductData) => `${element.id}`, action: 'delete' },
-      { styleClass: 'btn btn-primary px-2',     icon: 'build',    payload: (element: ProductData) => `${element.id}`, action: 'edit' },
+      {
+        styleClass: 'btn btn-success px-2',
+        icon: 'delete',
+        payload: (element: ProductData) => `${element.id}`,
+        action: 'delete',
+      },
+      {
+        styleClass: 'btn btn-primary px-2',
+        icon: 'build',
+        payload: (element: ProductData) => `${element.id}`,
+        action: 'edit',
+      },
     ];
 
     this.data.forEach((product: ProductData) => {
@@ -53,36 +63,38 @@ export class ProductListComponent implements OnInit {
     this.footer = this.FooterText;
   }
 
-  get FooterText(){
-    return this.translate.instant('totalPriceLabel', { totalPrice: this.totalPrice });
+  get FooterText() {
+    return this.translate.instant('totalPriceLabel', {
+      totalPrice: this.totalPrice,
+    });
   }
 
   buttonClick(result: any) {
     console.log(result[0]);
-    if(result[0] == 'delete'){
-      this.data = this.data.filter(x => x.id != result[1])
+    if (result[0] == 'delete') {
+      this.data = this.data.filter((x) => x.id != result[1]);
     } else {
-      let data = this.data.find(x => x.id == result[1]);
+      let data = this.data.find((x) => x.id == result[1]);
       this.openCreateProductDialogue(data, 'edit');
     }
   }
 
-  async parseRoute(route: any){
+  async parseRoute(route: any) {
     let editId: any = null;
-      route.split('/').forEach((part: any) =>{
-        if(part[0] == ':'){
-          editId = part.substring(1)
-        }
-      });
-    if(editId != null){
-      let product = this.data.find(x => x.id == editId);
-      if(product){
+    route.split('/').forEach((part: any) => {
+      if (part[0] == ':') {
+        editId = part.substring(1);
+      }
+    });
+    if (editId != null) {
+      let product = this.data.find((x) => x.id == editId);
+      if (product) {
         this.openCreateProductDialogue(product, 'edit');
       }
     }
   }
 
-  initColumns(){
+  initColumns() {
     this.columns = [
       {
         columnDef: 'name',
@@ -107,30 +119,30 @@ export class ProductListComponent implements OnInit {
       {
         columnDef: 'description',
         header: this.translate.instant('tabeHeaderDescription'),
-        cell: (element: ProductData) => `${element.description ? element.description : ''}`,
+        cell: (element: ProductData) =>
+          `${element.description ? element.description : ''}`,
       },
     ];
   }
 
   openCreateProductDialogue(productData: any = {}, mode = 'create') {
-    if(mode == 'edit'){
-      this.location.go(`/products/:${productData.id}`)
+    if (mode == 'edit') {
+      this.location.go(`/products/:${productData.id}`);
     } else {
-      this.location.go(`/products/create`)
+      this.location.go(`/products/create`);
     }
     const dialogRef = this.dialog.open(CreateComponentDialogueComponent, {
       width: '500px',
       data: productData,
-      disableClose: true
+      disableClose: true,
     });
-    
+
     dialogRef.afterClosed().subscribe((result: ProductData) => {
-      this.location.go(`/products`)
-      if(mode == 'create'){
+      this.location.go(`/products`);
+      if (mode == 'create') {
         result.id = crypto.randomUUID();
         this.data = [result, ...this.data];
       } else {
-        
       }
     });
   }
