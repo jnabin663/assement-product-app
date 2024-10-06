@@ -13,7 +13,6 @@ import { CreateComponentDialogueComponent } from './create-component-dialogue/cr
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  introText = 'Button actions and payloads come here in textual form';
   columns: TableColumn[] = [];
   buttons: TableBtn[] = [];
   data: ProductData[] = [];
@@ -64,7 +63,7 @@ export class ProductListComponent implements OnInit {
     }
   }
 
-  async parseRoute(route: any) {
+  parseRoute(route: any) {
     let editId: any = null;
     route.split('/').forEach((part: any) => {
       if (part[0] == ':') {
