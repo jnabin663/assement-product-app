@@ -14,15 +14,23 @@ export class CreateComponentDialogueComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: ProductData,
   ) { }
 
+  inputData: any = {};
+
   ngOnInit(): void {
+    this.inputData = JSON.parse(JSON.stringify(this.data))
   }
 
   get isValidProduct(){
-    return this.data.brand && this.data.code && this.data.name && this.data.price;
+    return this.inputData.brand && this.inputData.code && this.inputData.name && this.inputData.price;
   }
 
   onSaveClick(elementRef: any[]){
     if(this.isValidProduct) {
+      this.data.brand = this.inputData.brand;
+      this.data.name = this.inputData.name;
+      this.data.description = this.inputData.description;
+      this.data.price = this.inputData.price;
+      this.data.code = this.inputData.code;
       this.dialogRef.close(this.data);
     } else {
       elementRef.forEach(x => x.click());

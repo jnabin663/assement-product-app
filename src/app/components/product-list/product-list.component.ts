@@ -56,6 +56,10 @@ export class ProductListComponent implements OnInit {
         cell: (element: ProductData) => `${element.description ? element.description : ''}`,
       },
     ];
+    this.buttons = [
+      { styleClass: 'btn btn-success px-2',     icon: 'delete',    payload: (element: ProductData) => `${element.id}`, action: 'delete' },
+      { styleClass: 'btn btn-primary px-2',     icon: 'build',    payload: (element: ProductData) => `${element.id}`, action: 'edit' },
+    ];
 
     this.data.forEach((product: ProductData) => {
       this.totalPrice = this.totalPrice + product.price;
@@ -75,21 +79,30 @@ export class ProductListComponent implements OnInit {
     return this.translate.instant('totalPriceLabel', { totalPrice: this.totalPrice });
   }
 
-  buttonClick(result: string[]) {
-    this.introText = `action: ${result[0]}, payload ${result[1]}`;
+  buttonClick(result: any) {
+    console.log(result[0]);
+    if(result[0] == 'delete'){
+      this.data = this.data.filter(x => x.id != result[1])
+    } else {
+      let data = this.data.find(x => x.id == result[1]);
+      this.openCreateProductDialogue(data, 'edit');
+    }
   }
 
-  openCreateProductDialogue() {
-    let productData = {}
+  openCreateProductDialogue(productData = {}, mode = 'create') {
     const dialogRef = this.dialog.open(CreateComponentDialogueComponent, {
       width: '500px',
       data: productData,
       disableClose: true
     });
-
+    
     dialogRef.afterClosed().subscribe((result: ProductData) => {
-      result.id = (this.data.length + 1).toString();
-      this.data = [result, ...this.data];
+      if(mode == 'create'){
+        result.id = crypto.randomUUID();
+        this.data = [result, ...this.data];
+      } else {
+        
+      }
     });
   }
 }

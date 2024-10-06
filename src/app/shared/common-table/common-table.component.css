@@ -57,3 +57,19 @@ table, mat-paginator  {
         text-align: left;
     }
   }
+
+  .btn-group-groups{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 100px;
+  }
+  .btn-group-groups button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-group-groups button ::ng-deep .mat-icon{
+    font-size: x-large;
+  }

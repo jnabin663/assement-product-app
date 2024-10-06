@@ -24,8 +24,8 @@
                   <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef></th>
                     <td mat-cell *matCellDef="let row" [ngStyle]="{ 'min-width': 'calc(55px * ' + buttons.length + ')' }">
-                      <div class="btn-group"  *ngFor="let button of buttons" >
-                        <button class="{{button.styleClass}}" (click)="this.buttonClick.emit([button.action, button.payload(row)])">
+                      <div class="btn-group-groups" >
+                        <button *ngFor="let button of buttons" class="{{button.styleClass}}" (click)="this.buttonClick.emit([button.action, button.payload(row)])">
                           <mat-icon>{{ button.icon }}</mat-icon>
                         </button>
                       </div>
