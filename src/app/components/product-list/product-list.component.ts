@@ -83,26 +83,31 @@ export class ProductListComponent implements OnInit {
       {
         columnDef: 'name',
         header: this.translate.instant('tabeHeaderName'),
+        sortProperty: 'name',
         cell: (element: ProductData) => `${element.name}`,
       },
       {
         columnDef: 'code',
         header: this.translate.instant('tabeHeaderCode'),
+        sortProperty: 'code',
         cell: (element: ProductData) => `${element.code}`,
       },
       {
         columnDef: 'brand',
         header: this.translate.instant('tabeHeaderBrand'),
+        sortProperty: 'brand',
         cell: (element: ProductData) => `${element.brand}`,
       },
       {
         columnDef: 'price',
         header: this.translate.instant('tabeHeaderPrice'),
+        sortProperty: 'price',
         cell: (element: ProductData) => `${element.price}$`,
       },
       {
         columnDef: 'description',
         header: this.translate.instant('tabeHeaderDescription'),
+        sortProperty: 'description',
         cell: (element: ProductData) =>
           `${element.description ? element.description : ''}`,
       },

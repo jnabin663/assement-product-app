@@ -19,12 +19,12 @@
       <table
         mat-table
         [dataSource]="dataSource"
-        matSort
+        #dataSort="matSort" matSort
         [ngStyle]="{ 'min-width': +tableMinWidth + 'px' }"
       >
         <ng-container *ngFor="let column of columns">
           <ng-container matColumnDef="{{ column.columnDef }}">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header [mat-sort-header]="column.sortProperty">
               {{ column.header | translate }}
             </th>
             <td mat-cell *matCellDef="let row">{{ column.cell(row) }}</td>
